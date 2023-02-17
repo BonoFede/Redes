@@ -1,9 +1,16 @@
-<%- include layouts/header.ejs %>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include layouts/head.ejs %>
+</head>
+<body>
+  <%- include layouts/header.ejs %>
     <div class="container">
-      <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
+      <h1 class="text-center"><%= title %></h1>
+      <p class="text-center">Welcome to <%= title %></p>
     </div>
+  <%- include layouts/footer.ejs %>
+</body>
+</html>
 
-<%- include layouts/footer.ejs %>
     

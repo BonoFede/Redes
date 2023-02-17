@@ -1,24 +1,22 @@
-<%- include layouts/header.ejs %>
-
-    
-      <h1><%= title %></h1>
-
-      <div class="row">
-
-       
-            
-            <div class="col-sm-6 mb-3 mb-sm-0">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Suma</h5>
-                  <p class="card-text">Suma de dos numeros</p>
-                  <a href="nosotros" class="btn btn-primary">Resolver</a>
-                </div>
-              </div>
-            </div>
-         
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include layouts/head.ejs %>
+</head>
+<body>
+  <%- include layouts/header.ejs %>
+  <h1 class="text-center"><%= title %></h1>
+  <div class="row" style="margin: 0% 15%;">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Suma</h5>
+          <p class="card-text">Suma de dos numeros</p>
+          <a href="nosotros" class="btn btn-primary">Resolver</a>
+        </div>
       </div>
-    
-
-        
-<%- include layouts/footer.ejs %>
+    </div>
+  </div>
+  <%- include layouts/footer.ejs %>
+</body>
+</html>
