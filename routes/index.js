@@ -17,10 +17,7 @@ router.get('/docentes', function(req, res, next) {
   res.render('docentes', { title: 'Docentes' });
 });
 
-/* GET section. (problemas.ejs)
-router.get('/problemas', function(req, res, next) {
-  res.render('problemas', { title: 'Problemas' });
-});*/
+
 
 
 module.exports = router;
