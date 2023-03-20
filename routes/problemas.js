@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 
 db.query("SELECT * FROM problemas" , function(err, resultados){
     console.log(resultados);
-    res.render('problemas', { title: 'Problemas',Problemas:resultados });
+    res.render('problemas', { title: 'Problemas a resolver', Problemas:resultados });
 })
 
    
