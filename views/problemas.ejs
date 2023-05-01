@@ -4,7 +4,7 @@
   <%- include layouts/head.ejs %>
 </head>
 <body>
- <%- include layouts/header.ejs %>
+<%- include layouts/header.ejs %>
 
     
       <h1><%= title %></h1>
@@ -20,17 +20,25 @@
               <div class="card-body">
                 <h5 class="card-title"><%=Problemas[i].Titulo_problema %></h5>
                 <p class="card-text"><%=Problemas[i].Descripcion %></p>
+                
                 <a href="nosotros" class="btn btn-primary">Resolver</a>
-              </div>
-            </div>
-          </div>
-  
-          <% } %>
 
+              </div>
+              
+            </div>
+
+          </div>
           
+          <% } %>
       
       </div>
-
+      
+      <script>
+                
+        var titulo = "Problemas[i].Titulo_problema";
+        var codigo = "Problemas[i].Codigo"
+      
+      </script>
         
 <%- include layouts/footer.ejs %>
 </body>

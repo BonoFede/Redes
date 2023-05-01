@@ -22,23 +22,41 @@
     <div class="app-row">   
       <div id="result"></div>
     </div>  
+
   </div>
-  <%- include layouts/footer.ejs %>
+  
   <script>
-      let editor = CodeMirror.fromTextArea($("#editor")[0], {
+      let editor = CodeMirror.fromTextArea($("#editor")[0], { 
         lineNumbers: true,
         mode: "javascript"
       });
-
+      var cadena = "function";
+      var implementacion = cadena.concat(titulo," ",codigo);
       //show for default
-      editor.doc.setValue( "function myFuction(){\n\t return 100;\n}");
-
+      editor.doc.setValue( implementacion);
       //onClick clear
       $("#clear").click(() => editor.doc.setValue(""));
-
       //onClick clear
       $("#refresh").click(() => editor.doc.undo());
-
   </script>
+  <form class="row g-3">
+  <div class="col-md-2">
+    <label for="validationDefault02" class="form-label">Parámetros</label>
+    <input type="text" class="form-control" id="validationDefault02" value="" required>
+  </div>
+  <div class="col-md-2">
+    <label for="validationDefault01" class="form-label">Resultado obtenido</label>
+    <input type="text" class="form-control" id="validationDefault01" value="" required>
+  </div>
+  <div class="col-md-2">
+    <label for="validationDefault02" class="form-label">Resultado esperado</label>
+    <input type="text" class="form-control" id="validationDefault02" value="" required>
+  </div>
+  <div class="col-md-2">
+    <label for="validationDefault01" class="form-label">Sugerencias</label>
+    <input type="text" class="form-control" id="validationDefault01" value="" required>
+  </div>
+  </form>
 </body>
+<%- include layouts/footer.ejs %>
 </html>
