@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include layouts/head.ejs %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/mode/javascript/javascript.min.js"></script>
+</head>
+<body>
+  <%- include layouts/header.ejs %>
+
+    
+
+  <div class="container">
+    <div class="row">
+      <div class="app-row" style="margin-bottom: 10px;">
+        <textarea class=".codemirror-js style="width: 100%; id="editor"></textarea>
+      </div>
+      <div class="app-row" style="margin-bottom: 10px;">
+        <button  type="button" class="btn btn-success btn-action" id="run">Run</button>
+        <button  type="button" class="btn btn-success btn-action" id="clear">Clear</button>
+        <button  type="button" class="btn btn-success btn-action" id="refresh">Refresh</button>
+      </div>
+    </div>
+    <div class="app-row">   
+      <div id="result"></div>
+    </div>  
+
+  </div>
+  
+  <script>
+    
+        let editor = CodeMirror.fromTextArea($("#editor")[0], { 
+        lineNumbers: true,
+        mode: 'javascript',
+        theme: 'dracula'
+      });
+      //var cadena = "function ";
+      //var titulo = "un titulo";
+      //var codigo = " {// codigo}"
+      var implementacion = cadena.concat(titulo," ",problemas.codigo);
+      //show for default
+      editor.doc.setValue( implementacion);
+      //onClick clear
+      $("#clear").click(() => editor.doc.setValue(""));
+      //onClick clear
+      $("#refresh").click(() => editor.doc.undo());
+  </script>
+  <form class="row g-3">
+  <div class="col-md-2">
+    <label for="validationDefault02" class="form-label">Parámetros</label>
+    <input type="text" class="form-control" id="validationDefault02" value="" required>
+  </div>
+  <div class="col-md-2">
+    <label for="validationDefault01" class="form-label">Resultado obtenido</label>
+    <input type="text" class="form-control" id="validationDefault01" value="" required>
+  </div>
+  <div class="col-md-2">
+    <label for="validationDefault02" class="form-label">Resultado esperado</label>
+    <input type="text" class="form-control" id="validationDefault02" value="" required>
+  </div>
+  <div class="col-md-2">
+    <label for="validationDefault01" class="form-label">Sugerencias</label>
+    <input type="text" class="form-control" id="validationDefault01" value="" required>
+  </div>
+  </form>
+</body>
+<%- include layouts/footer.ejs %>
+</html>
