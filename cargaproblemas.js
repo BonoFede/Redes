@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var db = require("../conexion/conexion");
+//var app = express();
+router.use(express.urlencoded({ extended: true }));
+router.use(express.json());
 
 /*GET section. (cargaproblemas.ejs)*/
 router.get('/', function(req, res, next) {
@@ -9,11 +12,11 @@ router.get('/', function(req, res, next) {
   });
 
 // Ruta para crear un nuevo registro
-app.post('/crear', (req, res) => {
-  const { campo1, campo2, campo3 } = req.body; // Obtén los datos enviados desde el formulario
+router.post('/crear', function (req, res)  {
+  const { titulo, descripcion, oraculo, test, codigo } = req.body; // Obtén los datos enviados desde el formulario
 
   // Realiza la consulta SQL para insertar los datos en la base de datos
-  connection.query('INSERT INTO tabla (campo1, campo2, campo3) VALUES (?, ?, ?)', [campo1, campo2, campo3], (error, results) => {
+  db.query("INSERT * INTO problemas (Titulo_problema, Descripcion, Oraculo, Test, Codigo) VALUES (?, ?, ?, ?, ?)", [titulo, descripcion, oraculo, test, codigo], function(error, results) {
     if (error) {
       console.error('Error al crear el registro: ', error);
     } else {
