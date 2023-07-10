@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include layouts/head.ejs %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/mode/javascript/javascript.min.js"></script>
+</head>
+<%- include layouts/header.ejs %>
+
+<form class="row g-3">
+ 
+    <div class="col-md-2">
+      <label for="validationDefault01" class="form-label">Parametros</label>
+      <input type="text" class="form-control" id="validationDefault01" value="" required>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="app-row" style="margin-bottom: 10px;">
+          <label for="validationDefault03" class="form-label">Codigo</label>
+          <textarea class=".codemirror-js style="width: 50%; id="editororaculo"></textarea>
+        </div>
+        <script>
+          let editororaculo = CodeMirror.fromTextArea($("#editororaculo")[0], {
+            lineNumbers: true,
+            mode: "javascript"
+          });
+          //show for default
+          editororaculo.doc.setValue( "function myFunction(){\n\t return 100;\n}");
+          //onClick clear
+          $("#clear").click(() => editororaculo.doc.setValue(""));
+          //onClick clear
+          $("#refresh").click(() => editororaculo.doc.undo());
+      </script>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Testear</button>
+      </div>
+    <div class="col-md-2">
+      <label for="validationDefault02" class="form-label">Resultado obtenido</label>
+      <input type="text" class="form-control" id="validationDefault02" value="" required>
+    </div>
+    <div class="col-md-2">
+      <label for="validationDefault01" class="form-label">Resultado esperado</label>
+      <input type="text" class="form-control" id="validationDefault01" value="" required>
+    </div>
+    
+    </div>
+    <div class="col-md-2">
+      <label for="validationDefault05" class="form-label">Puntos</label>
+      <input type="text" class="form-control" id="validationDefault05" required>
+    </div>
+    
+    
+    </div>
+   
+  </form>
+
+
+
+
+<%- include layouts/footer.ejs %>
